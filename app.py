@@ -4,7 +4,7 @@ from Bots.BotHogRider import BotHogRider
 from Bots.BotZiggs import BotZiggs
 
 ###construa a lista de bots disponíveis aqui
-lista_bots = [BotZiggs("Ziggs"), BotHogRider("Hod Ridder")]
+lista_bots = [BotZiggs("Ziggs"), BotHogRider("Hog Ridder")]
 
 sys = scb.SistemaChatBot("CrazyBots",lista_bots)
 sys.inicio()
