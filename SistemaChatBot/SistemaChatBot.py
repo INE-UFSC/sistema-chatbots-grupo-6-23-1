@@ -38,12 +38,12 @@ class SistemaChatBot:
         ##faz a entrada de dados do usuário e executa o comando no bot ativo
         while True:
             comando = int(input('Digite o comando desejado  (ou --1 para fechar o programa): '))
-            if comando>=1 and comando<=4:
+            if comando>=0 and comando<=4:
+                self.__lista_bots[self.__bot].executa_comando(comando)
+            elif comando==-1:
                 break
             else:
                 print('Comando inválido')
-
-        self.__lista_bots[self.__bot].executa_comando(comando)
 
     def inicio(self):
         ##mostra mensagem de boas-vindas do sistema
