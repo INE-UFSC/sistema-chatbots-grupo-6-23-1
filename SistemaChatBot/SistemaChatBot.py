@@ -42,7 +42,7 @@ class SistemaChatBot:
             if comando>=0 and comando<=len(self.__lista_bots[self.__bot].comandos):
                 self.__lista_bots[self.__bot].executa_comando(comando)
             elif comando==-1:
-                self.__lista_bots[self.__bot].despedida()
+                print(self.__lista_bots[self.__bot].despedida())
                 break
             else:
                 print('Comando inválido')
