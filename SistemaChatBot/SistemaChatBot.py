@@ -17,12 +17,13 @@ class SistemaChatBot:
         contador_bots = 0
         for i in self.__lista_bots:
             print(f'{contador_bots} - Bot: {i.nome} - Mensagem de apresentação: {i.apresentacao()}')
+            contador_bots+=1
     
     def escolhe_bot(self):
         ##faz a entrada de dados do usuário e atribui o objeto ao atributo __bot 
         while True:
             seletor = int(input('Digite o número do chat bot desejado: '))
-            if seletor>=0 and seletor<range(self.__lista_bots):
+            if seletor>=0 and seletor<=len(self.__lista_bots)-1:
                 break
             else:
                 print('Seleção fora do range dos bots')
@@ -37,10 +38,11 @@ class SistemaChatBot:
     def le_envia_comando(self):
         ##faz a entrada de dados do usuário e executa o comando no bot ativo
         while True:
-            comando = int(input('Digite o comando desejado  (ou --1 para fechar o programa): '))
-            if comando>=0 and comando<=4:
+            comando = int(input('Digite o comando desejado  (ou -1 para fechar o programa): '))
+            if comando>=0 and comando<=len(self.__lista_bots[self.__bot].comandos):
                 self.__lista_bots[self.__bot].executa_comando(comando)
             elif comando==-1:
+                self.__lista_bots[self.__bot].despedida()
                 break
             else:
                 print('Comando inválido')

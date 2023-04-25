@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 import random as r
 
 class BotHogRider(Bot):
-    def __init__(self, nome, comandos):
+    def __init__(self, nome):
         comandos = {"Qual seu nome?" : "O QUÊÊÊ QUANTAS DEFESAS EU JA DESTRUI? WOW, MUITAS! Obrigado por perguntar, agora vai embora",
                     "Qual sua idade?": "Tenho 38 Marretas e 35 porcos HOG RIDAAA, e dai?",
                     "Onde eu moro? ": "A partir do Th7, espero que seja a ultima pergunta por que não estou aguentando mais",
@@ -13,10 +13,10 @@ class BotHogRider(Bot):
         super().__init__(nome, comandos)
 
     def apresentacao(self):
-        print(f"Olá eu sou o {self.__nome} do clash of clans HOG RIDAAAAA, adoro destruir tudo e hoje estou com muita raiva")
+        return(f"Olá eu sou o {super().nome} do clash of clans HOG RIDAAAAA, adoro destruir tudo e hoje estou com muita raiva")
 
     def boas_vindas(self):
-        print("Não acredito que me escolheu, em minha terra chamam isso de noobice")
+        return("Não acredito que me escolheu, em minha terra chamam isso de noobice")
 
     def despedida(self):
-        print("Até que enfim, já não tava aguentando, HOG RIDAAAA")
+        return("Até que enfim, já não tava aguentando, HOG RIDAAAA")

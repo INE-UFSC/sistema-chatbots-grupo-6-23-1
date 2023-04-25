@@ -10,10 +10,10 @@ class BotZiggs(Bot):
 
 
     def apresentacao(self):
-        print("Meu nome é" ,self.__nome, "alguem quer jogar?")
-            
+        return(f"Meu nome é {super().nome} alguem quer jogar?")
+
     def boas_vindas(self):
-        print(self.__nome, "diz: Você me escolheu, esta partida será um estouro!")
+        return(f"{super().nome} diz: Você me escolheu, esta partida será um estouro!")
     
     def despedida(self):
-        print(self.__nome,"diz: não acredito que nosso tempo acabou, estou indo, estou indo !!")
+        return(f"{super().nome} diz: não acredito que nosso tempo acabou, estou indo, estou indo !!")
