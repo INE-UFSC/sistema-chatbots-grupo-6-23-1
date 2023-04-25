@@ -4,7 +4,12 @@ class SistemaChatBot:
     def __init__(self,nomeEmpresa: str,lista_bots: list):
         self.__empresa=nomeEmpresa
         ##verificar se a lista de bots contém apenas bots
-        self.__lista_bots=lista_bots
+        self.__valido = True
+        for i in lista_bots:
+            if not isinstance(i, Bot):
+                self.__valido = False
+        if self.__valido:
+            self.__lista_bots=lista_bots
         self.__bot = None
     
     def boas_vindas(self):
@@ -54,8 +59,9 @@ class SistemaChatBot:
         ##mostra mensagens de boas-vindas do bot escolhido
         ##entra no loop de mostrar comandos do bot e escolher comando do bot até o usuário definir a saída
         ##ao sair mostrar a mensagem de despedida do bot
-        self.boas_vindas()
-        self.mostra_menu()
-        self.escolhe_bot()
-        self.mostra_comandos_bot()
-        self.le_envia_comando()
+        if self.__valido:
+            self.boas_vindas()
+            self.mostra_menu()
+            self.escolhe_bot()
+            self.mostra_comandos_bot()
+            self.le_envia_comando()
