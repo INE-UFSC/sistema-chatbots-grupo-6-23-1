@@ -23,7 +23,8 @@ class Bot(ABC):
             print(f"{index + 1} - {key}")
 
     def executa_comando(self, cmd):
-        print(self.__comandos[cmd])
+        keys = list(self.__comandos.keys())
+        print(self.__comandos[keys[cmd-1]])
 
     @abstractmethod
     def apresentacao(self):
