@@ -22,12 +22,11 @@ class Bot(ABC):
         for index, key in enumerate(keys):
             print(f"{index + 1} - {key}")
 
-    @abstractmethod
-    def apresentacao(self):
-        pass
+    def executa_comando(self, cmd):
+        print(self.__comandos[cmd])
 
     @abstractmethod
-    def executa_comando(self, cmd):
+    def apresentacao(self):
         pass
 
     @abstractmethod
