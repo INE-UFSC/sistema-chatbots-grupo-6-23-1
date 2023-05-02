@@ -1,4 +1,4 @@
 import os
 
 def run_env():
-    os.environ['API_KEY'] = 'your_key_here'
+    os.environ['API_KEY'] = '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'
