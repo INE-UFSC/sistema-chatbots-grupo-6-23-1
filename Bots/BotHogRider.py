@@ -8,8 +8,7 @@ class BotHogRider(Bot):
                     "Qual sua idade?": "Tenho 38 Marretas e 35 porcos HOG RIDAAA, e dai?",
                     "Onde eu moro? ": "A partir do Th7, espero que seja a ultima pergunta por que não estou aguentando mais",
                     "Qual o dia do seu aniversário? " : "30/02 HOG RIDAAAA",
-                    "Conte-me uma historia" : "Era uma vez 3 porquinho level 150 e um Th8, o Th8 assustado, pediu socorro, mas nenhum base-builder conseguia salva-lo. Fim da história, agora vai embora. HOG RIDAAAAAA"                   
-                    }
+                    "Conte-me uma historia" : "Era uma vez 3 porquinho level 150 e um Th8, o Th8 assustado, pediu socorro, mas nenhum base-builder conseguia salva-lo. Fim da história, agora vai embora. HOG RIDAAAAAA"}
         super().__init__(nome, comandos)
 
     def apresentacao(self):
