@@ -28,16 +28,15 @@ class BotChatGpt(Bot):
     def __gpt_call(self, cmd):
         try:
             openai.api_key = os.getenv("API_KEY")
+            openai.Model.list()
+
+            res = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "user", "content": cmd}
+                ]
+            )
+
+            return res.choices[0]["message"]["content"]
         except:
             print("Error: Chave utilizada, invalida")
-
-        openai.Model.list()
-
-        res = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": "user", "content": cmd}
-            ]
-        )
-
-        return res.choices[0]["message"]["content"]
