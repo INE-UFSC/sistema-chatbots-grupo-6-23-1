@@ -27,11 +27,17 @@ class SistemaChatBot:
     def escolhe_bot(self):
         ##faz a entrada de dados do usuário e atribui o objeto ao atributo __bot 
         while True:
-            seletor = int(input('Digite o número do chat bot desejado: '))
-            if seletor>=0 and seletor<=len(self.__lista_bots)-1:
-                break
+            try:
+                seletor = int(input('Digite o número do chat bot desejado: '))
+            
+            except: #Se houver algum erro de entrada
+                print("> Digite um numero valido")
+                continue
             else:
-                print('Seleção fora do range dos bots')
+                if seletor>=0 and seletor<=len(self.__lista_bots)-1:
+                    break
+                else:
+                    print('Seleção fora do range dos bots')
 
         self.__bot = seletor
         self.__lista_bots[seletor].apresentacao()
@@ -43,14 +49,20 @@ class SistemaChatBot:
     def le_envia_comando(self):
         ##faz a entrada de dados do usuário e executa o comando no bot ativo
         while True:
-            comando = int(input('Digite o comando desejado  (ou -1 para fechar o programa): '))
-            if comando>=0 and comando<=len(self.__lista_bots[self.__bot].comandos):
-                self.__lista_bots[self.__bot].executa_comando(comando)
-            elif comando==-1:
-                print(self.__lista_bots[self.__bot].despedida())
-                break
+            try:
+                comando = int(input('Digite o comando desejado (-1 para sair do programa) :'))
+            
+            except:
+                print("> Digite um valor valido")
+                continue
             else:
-                print('Comando inválido')
+                if comando == -1:
+                    return False
+                if comando>=0 and comando<=len(self.__lista_bots[self.__bot].comandos):
+                    self.__lista_bots[self.__bot].executa_comando(comando)
+                else:
+                    break
+        print(self.__lista_bots[self.__bot].despedida())
 
     def inicio(self):
         ##mostra mensagem de boas-vindas do sistema
